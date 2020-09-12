@@ -42,10 +42,10 @@ export default function Home() {
         })
     }
 
-    console.log(`Shipment: ${state.shipmentNumber}\nParcel: ${state.parcelNumber}`)
-
-    if(!state.shipmentInfo) {
-        return (
+    return (
+        <>
+        <small>Put header here</small>
+        {!state.shipmentInfo &&
             <form onSubmit={handleSubmit}>
                 <h1>Parcel Details</h1>
     
@@ -60,9 +60,8 @@ export default function Home() {
                 </label>
                 <input type="submit" value="Search" />
             </form>    
-        )
-    } else if (state.parcelNumber === '') {
-        return (
+        }
+        {(state.shipmentInfo) && (state.parcelNumber === '') &&
             <>
                 <h1>Shipment: {state.shipmentNumber}</h1>
                 {!state.shipmentInfo.parcels.length &&
@@ -90,13 +89,14 @@ export default function Home() {
                 }
                 <input type="submit" value="Back" onClick={clearResults}/>
             </>
-        )
-    } else {
-        return (
+        }
+        {(state.shipmentInfo) && (state.parcelNumber !== '') &&
             <>
                 <h1>Parcel: {state.parcelNumber}</h1>
                 <input type="submit" value="Back" onClick={clearSelectedParcel}/>
             </>
-        )
-    }
+        }
+         <small>Put footer here</small>
+       </>
+    )
 }

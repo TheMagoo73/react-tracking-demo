@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom"
-import ShipmentSearch from "./views/search"
+import Home from "./views/home"
 import ShipmentDetail from "./views/shipment-detail"
 import ParcelDetail from "./views/parcel-detail"
 import Store from './store'
@@ -21,7 +21,7 @@ function App() {
             <ShipmentDetail />
           </Route>
           <Route path = "/">
-            <ShipmentSearch />
+            <Home />
           </Route>
         </Switch>
       </div>

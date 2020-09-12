@@ -19,6 +19,11 @@ const Reducer = (state, action) => {
                 ...state,
                 shipmentInfo
             }
+        case 'SET_VALIDATION_ERROR':
+            return {
+                ...state,
+                validationError: action.payload
+            }
         case 'CLEAR_SHIPMENT_INFO':
             return {
                 ...state,
@@ -37,7 +42,8 @@ const Reducer = (state, action) => {
 const initialState = {
     shipmentNumber: '',
     parcelNumber: '',
-    shipmentInfo: undefined
+    shipmentInfo: undefined,
+    validationError: ''
 }
 
 const Store = ({children}) => {

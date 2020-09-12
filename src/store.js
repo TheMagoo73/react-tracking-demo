@@ -7,10 +7,22 @@ const Reducer = (state, action) => {
                 ...state,
                 shipmentNumber: action.payload
             };
-        case 'SET_SHIPMENT_INFO':
+        case 'GET_SHIPMENT_INFO':
+            // In production code, we'd query the GraphQL to get the shipment information
+            const shipmentInfo = {
+                carrier: 'DPD',
+                consNo: state.shipmentNumber,
+                parcels: ['123', '321', 'FOO']
+            }
+            
             return {
                 ...state,
-                shipmentInfo: action.payload
+                shipmentInfo
+            }
+        case 'CLEAR_SHIPMENT_INFO':
+            return {
+                ...state,
+                shipmentInfo: undefined
             }
         case 'SET_PARCEL_NUMBER':
             return {

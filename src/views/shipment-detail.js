@@ -14,13 +14,7 @@ export default function ShipmentDetail() {
 
     // TODO Get the shipment data from GraphQL
     dispatch({
-        type: 'SET_SHIPMENT_INFO',
-        payload: {
-            carrier: 'DPD',
-            parcels: [
-                "123", "456"
-            ]
-        }
+        type: 'GET_SHIPMENT_INFO'
     })
 
     return (

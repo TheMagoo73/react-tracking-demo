@@ -18,13 +18,7 @@ export default function ShipmentSearch() {
         // TODO: the shipment info from the gateway
 
         dispatch({
-            type: 'SET_SHIPMENT_INFO',
-            payload: {
-                carrier: 'DPD',
-                parcels: [
-                    "123", "456"
-                ]
-            }
+            type: 'GET_SHIPMENT_INFO',
         })
     }
 
@@ -44,8 +38,7 @@ export default function ShipmentSearch() {
 
     const clearResults = (evt) => {
         dispatch({
-            type: 'SET_SHIPMENT_INFO',
-            payload: undefined
+            type: 'CLEAR_SHIPMENT_INFO'
         })
     }
 
